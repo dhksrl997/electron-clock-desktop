@@ -20,7 +20,7 @@ function App() {
             setIndex(index => index + 1 === urls.length ? 0 : index + 1)
             console.log(urls[index]);
             console.log(index);
-        }, 3000);
+        }, 5000);
 
         return () => {
             clearInterval(timer);
@@ -40,7 +40,7 @@ function App() {
         color: 'black',
         width: '100%',
         height: '100%',
-        overflow:'hidden'
+        overflow: 'hidden'
     }
 
     const timeStyle = {
@@ -50,18 +50,20 @@ function App() {
         transform: 'translate(-50%, -50%)',
         fontSize: '120px',
         zIndex: '40',
-        color:'white'
+        color: 'white',
+        textShadow: '15px 15px 5px black'
     }
 
     const imageStyle = {
         width: '800px',
         height: '600px',
-        left:'0',
-        top:'0',
+        left: '0',
+        top: '0',
+        transition: '0.5s'
     };
 
     return (
-        <div className="App" style={{margin: '0px', width: '100%', height: '100%',overflow:'hidden'}}>
+        <div className="App" style={{margin: '0px', width: '100%', height: '100%', overflow: 'hidden'}}>
             <div className="container" style={containerStyle}>
                 <b style={timeStyle}>{time}</b>
                 <img src={imageURL} style={imageStyle}/>
